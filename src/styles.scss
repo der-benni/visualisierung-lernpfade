@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+$sm:600px;
+$md:960px;
+$lg:1280px;
+$xl:1920px;
+@import 'primeflex/primeflex.scss';
+*{
+  font-family: 'Roboto', sans-serif;
+}
+.p-card .p-card-body{
+  padding: 0;
+}
