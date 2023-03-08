@@ -17,7 +17,7 @@ export class NavComponent {
       },
       {
         label: 'Lernpfade',
-        routerLink: '/'
+        routerLink: '/path'
       },
       {
         label: 'Verlauf',

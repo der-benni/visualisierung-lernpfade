@@ -14,13 +14,23 @@ import {TabViewModule} from "primeng/tabview";
 import {CardModule} from "primeng/card";
 import {ProgressBarModule} from "primeng/progressbar";
 import { PathCardComponent } from './path-card/path-card.component';
+import { PathViewComponent } from './path-view/path-view.component';
+import { PathStepsComponent } from './path-steps/path-steps.component';
+import { PathDetailsComponent } from './path-details/path-details.component';
+import {KnobModule} from "primeng/knob";
+import {FormsModule} from "@angular/forms";
+import {PanelMenuModule} from "primeng/panelmenu";
+import {MenuModule} from "primeng/menu";
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     NavComponent,
-    PathCardComponent
+    PathCardComponent,
+    PathViewComponent,
+    PathStepsComponent,
+    PathDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +41,11 @@ import { PathCardComponent } from './path-card/path-card.component';
     InputTextModule,
     TabViewModule,
     CardModule,
-    ProgressBarModule
+    ProgressBarModule,
+    KnobModule,
+    FormsModule,
+    PanelMenuModule,
+    MenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

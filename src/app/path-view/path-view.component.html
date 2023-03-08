@@ -1,0 +1,17 @@
+<div class="h-full">
+  <div class="flex flex-row flex-wrap justify-content-between">
+    <div class="flex flex-column">
+      <h2>Lernpfad - Webtechnologien</h2>
+      <p>Basics > HTML</p>
+    </div>
+    <p-knob [(ngModel)]="progress" valueTemplate="{value}%" valueColor="green" rangeColor="lightgreen"></p-knob>
+  </div>
+  <p-tabView>
+    <p-tabPanel header="Pfad">
+      <app-path-steps></app-path-steps>
+    </p-tabPanel>
+    <p-tabPanel header="Details">
+      <app-path-details></app-path-details>
+    </p-tabPanel>
+  </p-tabView>
+</div>
