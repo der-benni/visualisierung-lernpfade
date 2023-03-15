@@ -4,7 +4,7 @@
       <h2>Lernpfad - Webtechnologien</h2>
       <p>Basics > HTML</p>
     </div>
-    <p-knob [(ngModel)]="progress" valueTemplate="{value}%" valueColor="green" rangeColor="lightgreen"></p-knob>
+    <p-knob [(ngModel)]="progress" [readonly]="true" valueTemplate="{value}%" valueColor="green" rangeColor="lightgreen"></p-knob>
   </div>
   <p-tabView>
     <p-tabPanel header="Pfad">
