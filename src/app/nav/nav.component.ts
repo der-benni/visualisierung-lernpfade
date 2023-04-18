@@ -13,11 +13,11 @@ export class NavComponent {
     this.items = [
       {
         label: 'Dashboard',
-        routerLink: '/'
+        routerLink: '/dashboard'
       },
       {
         label: 'Lernpfade',
-        routerLink: '/path'
+        routerLink: '/learning-path'
       },
       {
         label: 'Verlauf',

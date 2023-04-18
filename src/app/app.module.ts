@@ -21,6 +21,8 @@ import {KnobModule} from "primeng/knob";
 import {FormsModule} from "@angular/forms";
 import {PanelMenuModule} from "primeng/panelmenu";
 import {MenuModule} from "primeng/menu";
+import { SelectionViewComponent } from './selection-view/selection-view.component';
+import {TableModule} from "primeng/table";
 
 @NgModule({
   declarations: [
@@ -30,23 +32,25 @@ import {MenuModule} from "primeng/menu";
     PathCardComponent,
     PathViewComponent,
     PathStepsComponent,
-    PathDetailsComponent
+    PathDetailsComponent,
+    SelectionViewComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    ButtonModule,
-    MegaMenuModule,
-    InputTextModule,
-    TabViewModule,
-    CardModule,
-    ProgressBarModule,
-    KnobModule,
-    FormsModule,
-    PanelMenuModule,
-    MenuModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        ButtonModule,
+        MegaMenuModule,
+        InputTextModule,
+        TabViewModule,
+        CardModule,
+        ProgressBarModule,
+        KnobModule,
+        FormsModule,
+        PanelMenuModule,
+        MenuModule,
+        TableModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
