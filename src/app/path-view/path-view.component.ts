@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./path-view.component.scss']
 })
 export class PathViewComponent {
-  progress:number = 2;
+  progress:number = 50;
 }

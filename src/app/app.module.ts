@@ -23,6 +23,8 @@ import {PanelMenuModule} from "primeng/panelmenu";
 import {MenuModule} from "primeng/menu";
 import { SelectionViewComponent } from './selection-view/selection-view.component';
 import {TableModule} from "primeng/table";
+import { ActivityChartComponent } from './activity-chart/activity-chart.component';
+import {ChartModule} from "primeng/chart";
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import {TableModule} from "primeng/table";
     PathViewComponent,
     PathStepsComponent,
     PathDetailsComponent,
-    SelectionViewComponent
+    SelectionViewComponent,
+    ActivityChartComponent
   ],
     imports: [
         BrowserModule,
@@ -50,6 +53,7 @@ import {TableModule} from "primeng/table";
         PanelMenuModule,
         MenuModule,
         TableModule,
+        ChartModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

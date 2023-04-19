@@ -3,6 +3,12 @@
 ## PrimeNG-Komponenten
 Unter: [Komponenten](https://primeng.org/installation)
 
+## Primeflex (CSS-System)
+Unter: [CSS](https://www.primefaces.org/primeflex/setup)
+
+## PrimeIcons
+Unter: [Icons](https://primeng.org/icons)
+
 ## Angular-Stuff
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.

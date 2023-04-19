@@ -1,10 +1,9 @@
 <div class="h-full">
-  <div class="flex flex-row flex-wrap justify-content-between">
+  <div class="flex flex-row flex-wrap justify-content-between align-content-center">
     <div class="flex flex-column">
-      <h2>Lernpfad - Webtechnologien</h2>
-      <p>Basics > HTML</p>
+      <h2>Webtechnologien</h2>
     </div>
-    <p-knob [(ngModel)]="progress" [readonly]="true" valueTemplate="{value}%" valueColor="green" rangeColor="lightgreen"></p-knob>
+    <p-knob [(ngModel)]="progress" [readonly]="true" valueTemplate="{value}%" valueColor="green" rangeColor="lightgreen" [strokeWidth]="8" [size]="80"></p-knob>
   </div>
   <p-tabView>
     <p-tabPanel header="Pfad">
