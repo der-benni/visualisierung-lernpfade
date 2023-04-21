@@ -22,20 +22,20 @@ export class ActivityChartComponent {
       labels: ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'],
       datasets: [
         {
-          label: 'Actual',
+          label: 'Erreicht',
           data: [10, 25, 0, 30, 20, 20, 5],
           fill: true,
           tension: 0.4,
-          borderColor: documentStyle.getPropertyValue('--blue-500'),
+          borderColor: documentStyle.getPropertyValue('--blue-300'),
           backgroundColor: 'rgba(59,130,246,0.2)'
         },
         {
-          label: 'Planned',
+          label: 'Lernziel',
           data: [20, 20, 20, 20, 20, 20, 20],
           fill: false,
           borderDash: [5, 5],
           tension: 0.4,
-          borderColor: documentStyle.getPropertyValue('--orange-500')
+          borderColor: documentStyle.getPropertyValue('--orange-300')
         }
       ]
     };

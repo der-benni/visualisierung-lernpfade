@@ -10,6 +10,6 @@
   </ng-template>
   <ng-template pTemplate="footer">
     <p class="px-2 py-1 m-0">1 von 2 Lektionen abgeschlossen</p>
-    <p-progressBar value="50" [showValue]="false" [style]="{'height': '12px'}" color="green" styleClass="border-noround"></p-progressBar>
+    <p-progressBar value="50" [showValue]="false" [style]="{'height': '12px'}" color="{documentStyle.getPropertyValue('--blue-300')}" styleClass="border-noround"></p-progressBar>
   </ng-template>
 </p-card>
