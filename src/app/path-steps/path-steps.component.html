@@ -1,11 +1,15 @@
-<div class="flex flex-row grid h-full">
-  <div class="col-4 h-full">
-    <div class="border-1 border-gray-300 p-3 h-full">
-      <p-panelMenu [model]="items" [style]="{'width':'300px'}"></p-panelMenu>
+<div class="flex flex-row grid" style="height: 70vh">
+  <div class="col-3 h-full">
+    <div class="border-1 border-gray-300 p-3 h-full overflow-scroll">
+      <p-panelMenu [model]="items"></p-panelMenu>
     </div>
   </div>
-  <div class="col-8">
-    <div class="border-1 border-gray-300 p-3 h-full">
+  <div class="col-9">
+    <div class="border-1 border-gray-300 h-full relative">
+      <div class="border-top-1 border-gray-300 absolute bottom-0 w-full p-2 flex justify-content-between">
+        <p-button label="Zurück" icon="pi pi-arrow-left"></p-button>
+        <p-button label="Weiter" icon="pi pi-arrow-right" iconPos="right"></p-button>
+      </div>
     </div>
   </div>
 </div>
