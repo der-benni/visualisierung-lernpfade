@@ -25,6 +25,7 @@ import { SelectionViewComponent } from './selection-view/selection-view.componen
 import {TableModule} from "primeng/table";
 import { ActivityChartComponent } from './activity-chart/activity-chart.component';
 import {ChartModule} from "primeng/chart";
+import {ConfirmDialogModule} from "primeng/confirmdialog";
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import {ChartModule} from "primeng/chart";
         MenuModule,
         TableModule,
         ChartModule,
+        ConfirmDialogModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

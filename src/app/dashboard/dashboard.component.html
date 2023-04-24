@@ -1,23 +1,33 @@
 <div class="grid">
-  <div class="col-10">
-    <h1>Mache dort weiter, wo du aufgehört hast, {{this.showname}}!</h1>
+  <h1>Mache dort weiter, wo du aufgehört hast, {{this.showname}}!</h1>
+  <p>
+    Dieses Studienprojekt setzt sich mit der Visualisierung von Lernpfaden auf einer digitalen Lernplattform auseinander und wird ihm Rahmen des VoLL-KI-Projekts umgesetzt.
+    Dabei sollen künftig Lernpfade eingesetzt werden, um das Lernen zu strukturieren und Lernenden eine Schritt-für-Schritt-Anleitung bereitzustellen.
+    Lernpfade können aus Aktivitäten wie etwa Texten, Videos, interaktive Übungen oder Quizzen bestehen und verfolgen ein klar definiertes Ziel.
+    Lernende sollen ihr Wissen zu einem bestimmten Thema systematisch aufbauen und vertiefen können.
+    Auch soll für den Lernenden der aktuelle Fortschritt jederzeit klar ersichtlich sein.
+    Darüber hinaus können Lernpfade individuell angepasst werden, um den unterschiedlichen Lernbedürfnissen und -stilen der Lernenden gerecht zu werden.
+  </p>
+  <div class="col-9">
+    <h2 class="my-1">Lernpfade</h2>
     <p-tabView>
       <p-tabPanel header="Laufend">
         <div class="grid flex flex-row row-gap-2">
-          <app-path-card class="col-12 md:col-6 lg:col-6"></app-path-card>
-          <app-path-card class="col-12 md:col-6 lg:col-6"></app-path-card>
-          <app-path-card class="col-12 md:col-6 lg:col-6"></app-path-card>
-          <app-path-card class="col-12 md:col-6 lg:col-6"></app-path-card>
+          <app-path-card [percentage]="43" [isValue]="3" [goalValue]="7" pathName="Webtechnologien" class="col-12 md:col-6 lg:col-6"></app-path-card>
+          <app-path-card [percentage]="20" [isValue]="2" [goalValue]="10" pathName="Wirtschaftsinformatik" class="col-12 md:col-6 lg:col-6"></app-path-card>
+          <app-path-card [percentage]="60" [isValue]="3" [goalValue]="5" pathName="Computergrafik" class="col-12 md:col-6 lg:col-6"></app-path-card>
+          <app-path-card [percentage]="80" [isValue]="8" [goalValue]="10" pathName="Bildverarbeitung" class="col-12 md:col-6 lg:col-6"></app-path-card>
         </div>
       </p-tabPanel>
       <p-tabPanel header="Abgeschlossen">
         <div class="grid flex flex-row row-gap-2">
-          <app-path-card class="col-12 md:col-6 lg:col-6"></app-path-card>
-          <app-path-card class="col-12 md:col-6 lg:col-6"></app-path-card>
+          <app-path-card [percentage]="100" [isValue]="2" [goalValue]="2" pathName="Betriebssysteme" class="col-12 md:col-6 lg:col-6"></app-path-card>
+          <app-path-card [percentage]="100" [isValue]="10" [goalValue]="10" pathName="Datenbanken" class="col-12 md:col-6 lg:col-6"></app-path-card>
         </div>
       </p-tabPanel>
     </p-tabView>
   </div>
+  <div class="col-1"></div>
   <div class="col-2">
     <app-activity-chart></app-activity-chart>
   </div>

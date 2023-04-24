@@ -3,13 +3,13 @@
     <div class="grid flex flex flex-row justify-content-between align-content-start px-3 pt-2 pb-0">
       <div>
         <p class="m-0 ">Lernpfad</p>
-        <p class="m-0 text-3xl">Webtechnologien</p>
+        <p class="m-0 text-2xl">{{this.pathName}}</p>
       </div>
       <button pButton type="button" icon="pi pi-ellipsis-v" class="p-button-lg p-button-text p-button-secondary"></button>
     </div>
   </ng-template>
   <ng-template pTemplate="footer">
-    <p class="px-2 py-1 m-0">1 von 2 Lektionen abgeschlossen</p>
-    <p-progressBar value="50" [showValue]="false" [style]="{'height': '12px'}" color="{documentStyle.getPropertyValue('--blue-300')}" styleClass="border-noround"></p-progressBar>
+    <p class="px-2 py-1 m-0">{{this.isValue}} von {{this.goalValue}} Lektionen abgeschlossen</p>
+    <p-progressBar value="{{this.percentage}}" [showValue]="false" [style]="{'height': '12px'}" color="{documentStyle.getPropertyValue('--blue-300')}" styleClass="border-noround"></p-progressBar>
   </ng-template>
 </p-card>

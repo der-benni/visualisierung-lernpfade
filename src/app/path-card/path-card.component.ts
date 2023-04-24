@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-path-card',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./path-card.component.scss']
 })
 export class PathCardComponent {
+
+  @Input() percentage: number = 50;
+  @Input() isValue: number = 1;
+  @Input() goalValue: number = 2;
+  @Input() pathName: string = 'Webtechnologien';
 
 }
