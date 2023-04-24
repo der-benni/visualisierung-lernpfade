@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {MenuItem} from "primeng/api";
 
 @Component({
@@ -9,7 +9,12 @@ import {MenuItem} from "primeng/api";
 export class PathStepsComponent {
   items: MenuItem[];
 
+  step: number = 0;
+
   constructor() {
+
+    this.step = 0;
+
     this.items = [
       {
         label: 'Willkommen',
@@ -173,6 +178,20 @@ export class PathStepsComponent {
         icon: 'pi pi-pencil',
       }
     ];
+  }
+
+  goBackward() {
+    if (this.step > 0) {
+      this.step--;
+    }
+    console.log(this.step);
+  }
+
+  goForward() {
+    if (this.step < 26) {
+      this.step++;
+    }
+    console.log(this.step);
   }
 
 }
