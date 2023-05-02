@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {MenuItem} from "primeng/api";
+import {ActivatedRoute, Params} from "@angular/router";
 
 @Component({
   selector: 'app-path-steps',
@@ -9,108 +10,65 @@ import {MenuItem} from "primeng/api";
 export class PathStepsComponent {
   items: MenuItem[];
 
-  constructor() {
+  currentStep: string = '3-0-1'
+  colorDone: string = 'green'
+  colorCurrent: string = 'orange'
+  colorUndone: string = ''
+  iconDone: string = 'pi pi-check-circle'
+  iconCurrent: string = 'pi pi-circle'
+  iconUndone: string = 'pi pi-circle'
+
+  constructor(private route: ActivatedRoute) {
     this.items = [
       {
         label: 'Willkommen',
-        icon: 'pi pi-check-circle',
-        iconStyle: {
-          color: 'green'
-        },
       },
       {
         label: 'Einführung',
-        icon: 'pi pi-check-circle',
-        iconStyle: {
-          color: 'green'
-        },
       },
       {
         label: 'Lernziele',
-        icon: 'pi pi-check-circle',
-        iconStyle: {
-          color: 'green'
-        },
       },
       {
         label: 'Grundlagen',
-        icon: 'pi pi-circle',
-        iconStyle: {
-          color: 'orange'
-        },
-        expanded: true,
         items: [
           {
             label: 'HTML',
-            icon: 'pi pi-check-circle',
-            iconStyle: {
-              color: 'green'
-            },
             items: [
               {
                 label: 'Tags',
-                icon: 'pi pi-check-circle',
-                iconStyle: {
-                  color: 'green'
-                },
               },
               {
                 label: 'Attribute',
-                icon: 'pi pi-check-circle',
-                iconStyle: {
-                  color: 'green'
-                },
               },
               {
                 label: 'Struktur',
-                icon: 'pi pi-check-circle',
-                iconStyle: {
-                  color: 'green'
-                },
               },
             ]
           },
           {
             label: 'CSS',
-            icon: 'pi pi-circle',
-            iconStyle: {
-              color: 'orange'
-            },
-            expanded: true,
             items: [
               {
                 label: 'Selektoren',
-                icon: 'pi pi-circle',
-                iconStyle: {
-                  color: 'green'
-                },
               },
               {
                 label: 'Kaskadierung',
-                icon: 'pi pi-circle',
-                iconStyle: {
-                  color: 'orange'
-                },
               },
               {
                 label: 'Einheiten',
-                icon: 'pi pi-circle'
               },
               {
                 label: 'Responsive Design',
-                icon: 'pi pi-info-circle',
                 items: [
                   {
                     label: 'MediaQueries',
-                    icon: 'pi pi-circle'
                   },
                   {
                     label: 'Flexbox',
-                    icon: 'pi pi-circle'
                   },
                   {
                     label: 'Grid',
-                    icon: 'pi pi-circle'
                   },
                 ]
               },
@@ -118,19 +76,15 @@ export class PathStepsComponent {
           },
           {
             label: 'JavaScript',
-            icon: 'pi pi-circle',
             items: [
               {
                 label: 'Variablen',
-                icon: 'pi pi-circle'
               },
               {
                 label: 'Funktionen',
-                icon: 'pi pi-circle'
               },
               {
                 label: 'Schleifen und Bedingungen',
-                icon: 'pi pi-circle'
               },
             ]
           },
@@ -138,41 +92,70 @@ export class PathStepsComponent {
       },
       {
         label: 'Frameworks',
-        icon: 'pi pi-circle',
         items: [
           {
             label: 'Bootstrap',
-            icon: 'pi pi-circle'
           },
           {
             label: 'React',
-            icon: 'pi pi-circle'
           },
           {
             label: 'Angular',
-            icon: 'pi pi-circle'
           },
         ]
       },
       {
         label: 'Backend-Technologien',
-        icon: 'pi pi-circle',
         items: [
           {
             label: 'PHP',
-            icon: 'pi pi-circle'
           },
           {
             label: 'Node.js',
-            icon: 'pi pi-circle'
           }
         ]
       },
       {
         label: 'Test',
-        icon: 'pi pi-pencil',
       }
     ];
+  }
+
+  ngOnInit() {
+    const queryStep = this.route.snapshot.queryParamMap.get('cs');
+    if(queryStep)
+      this.currentStep = queryStep;
+    this.setCurrentStep(this.items, 0)
+  }
+
+  setCurrentStep(items: MenuItem[]|undefined, depth:number=0){
+    if(!items) return;
+    const step = Number(this.currentStep.split('-')[depth]);
+    items.forEach((item, index) => {
+      if(step != undefined && index < step){
+        item.icon = this.iconDone;
+        item.iconStyle = {color: this.colorDone};
+        this.setAllChildItems(item.items,this.iconDone,this.colorDone);
+      }else if(step != undefined && index == step) {
+        item.icon = this.iconCurrent;
+        item.iconStyle = {color: this.colorCurrent};
+        item.expanded = true;
+        this.setCurrentStep(item.items, ++depth)
+      }else{
+        item.icon = this.iconUndone;
+        item.iconStyle = {color: this.colorUndone};
+        this.setAllChildItems(item.items,this.iconUndone,this.colorUndone);
+      }
+    })
+  }
+
+  setAllChildItems(items: MenuItem[]|undefined, icon:string, color:string){
+    if(!items) return;
+    items.forEach(item => {
+      item.icon = icon;
+      item.iconStyle = {color: color};
+      this.setAllChildItems(item.items,icon,color)
+    })
   }
 
 }
