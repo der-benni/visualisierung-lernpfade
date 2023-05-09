@@ -31,6 +31,7 @@ import { Uc2Component } from './uc2/uc2.component';
 import { Uc3Component } from './uc3/uc3.component';
 import { Uc4Component } from './uc4/uc4.component';
 import { Uc5Component } from './uc5/uc5.component';
+import {SpeedDialModule} from "primeng/speeddial";
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { Uc5Component } from './uc5/uc5.component';
         TableModule,
         ChartModule,
         ConfirmDialogModule,
+        SpeedDialModule,
     ],
   providers: [],
   bootstrap: [AppComponent]
