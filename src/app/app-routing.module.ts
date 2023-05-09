@@ -8,6 +8,7 @@ const routes: Routes = [
   {path: '', component: SelectionViewComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'learning-path', component: PathViewComponent},
+  {path: 'scenario/:id', component: SelectionViewComponent},
 ];
 
 @NgModule({
