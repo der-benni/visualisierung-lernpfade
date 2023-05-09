@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {MenuItem} from "primeng/api";
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
+import { ChartModule } from 'primeng/chart';
 
 @Component({
   selector: 'app-path-steps',
@@ -17,6 +18,13 @@ export class PathStepsComponent {
   iconDone: string = 'pi pi-check-circle'
   iconCurrent: string = 'pi pi-circle'
   iconUndone: string = 'pi pi-circle'
+
+  view: string = ''
+
+
+  data: any;
+
+  options: any;
 
   constructor(private route: ActivatedRoute) {
     this.items = [
@@ -125,6 +133,9 @@ export class PathStepsComponent {
     const queryStep = this.route.snapshot.queryParamMap.get('cs');
     if(queryStep)
       this.currentStep = queryStep;
+    const queryView = this.route.snapshot.queryParamMap.get('v');
+    if(queryView)
+      this.view = queryView;
     this.setCurrentStep(this.items, 0)
   }
 

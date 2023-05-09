@@ -26,6 +26,11 @@ import {TableModule} from "primeng/table";
 import { ActivityChartComponent } from './activity-chart/activity-chart.component';
 import {ChartModule} from "primeng/chart";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
+import { Uc1Component } from './uc1/uc1.component';
+import { Uc2Component } from './uc2/uc2.component';
+import { Uc3Component } from './uc3/uc3.component';
+import { Uc4Component } from './uc4/uc4.component';
+import { Uc5Component } from './uc5/uc5.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +42,12 @@ import {ConfirmDialogModule} from "primeng/confirmdialog";
     PathStepsComponent,
     PathDetailsComponent,
     SelectionViewComponent,
-    ActivityChartComponent
+    ActivityChartComponent,
+    Uc1Component,
+    Uc2Component,
+    Uc3Component,
+    Uc4Component,
+    Uc5Component
   ],
     imports: [
         BrowserModule,
