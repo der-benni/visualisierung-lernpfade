@@ -15,19 +15,19 @@ export class SelectionViewComponent {
         id: '1',
         title: 'Empfehlungen',
         description: 'Einem Nutzer nach Bearbeitung eines Mediums oder Kapitels anzeigen, womit andere Nutzer ihren Lernpfad fortgesetzt haben.',
-        link: 'learning-path?cs=5-1&v=1',
+        link: 'learning-path?t=1&cs=4-3&v=1',
       },
       {
         id: '2',
         title: 'Erinnerungen',
         description: 'Der Nutzer wird auf der Übersicht eines Lernpfades auf Inhalte aufmerksam gemacht, die er übersprungen hat, welche für ihn jedoch relevant sein können.',
-        link: '',
+        link: 'learning-path?t=0',
       },
       {
         id: '3',
         title: 'Übungen',
         description: 'Der Nutzer wird auf der Übersicht eines Lernpfades auf Quizze (mit den entsprechenden zugehörigen Medien) mit schlechten Ergebnissen aufmerksam gemacht, diese zu wiederholen und so zu festigen.',
-        link: '',
+        link: 'learning-path?t=0',
       },
       {
         id: '4',

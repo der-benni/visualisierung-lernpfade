@@ -32,6 +32,7 @@ import { Uc3Component } from './uc3/uc3.component';
 import { Uc4Component } from './uc4/uc4.component';
 import { Uc5Component } from './uc5/uc5.component';
 import {SpeedDialModule} from "primeng/speeddial";
+import { PathOverviewComponent } from './path-overview/path-overview.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import {SpeedDialModule} from "primeng/speeddial";
     Uc2Component,
     Uc3Component,
     Uc4Component,
-    Uc5Component
+    Uc5Component,
+    PathOverviewComponent
   ],
     imports: [
         BrowserModule,

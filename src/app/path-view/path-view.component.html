@@ -5,7 +5,10 @@
     </div>
     <p-knob [(ngModel)]="progress" [readonly]="true" valueTemplate="{value}%" valueColor="green" rangeColor="lightgreen" [strokeWidth]="8" [size]="80"></p-knob>
   </div>
-  <p-tabView>
+  <p-tabView [(activeIndex)]="activeTabIndex">
+    <p-tabPanel header="Übersicht">
+      <app-path-overview></app-path-overview>
+    </p-tabPanel>
     <p-tabPanel header="Pfad">
       <app-path-steps></app-path-steps>
     </p-tabPanel>
