@@ -1,4 +1,4 @@
-<p-card class="p-card-shadow hover:shadow-8 cursor-pointer border-noround w-full">
+<p-card class="p-card-shadow hover:shadow-8 cursor-pointer border-noround w-full" (click)="this.click()">
   <ng-template pTemplate="header">
     <div class="grid flex flex flex-row justify-content-between align-content-start px-3 pt-2 pb-0">
       <div>
@@ -7,6 +7,8 @@
       </div>
       <button pButton type="button" icon="pi pi-ellipsis-v" class="p-button-lg p-button-text p-button-secondary"></button>
     </div>
+    <p class="px-3">Bisher augewendete zeit: 34 Stunden<br/>
+    Durchschnittlich augewendete zeit: 123 Stunden</p>
   </ng-template>
   <ng-template pTemplate="footer">
     <p class="px-2 py-1 m-0">{{this.isValue}} von {{this.goalValue}} Lektionen abgeschlossen</p>

@@ -1,1 +1,55 @@
-<p>uc5 works!</p>
+<div class="w-full h-full flex flex-column justify-content-start px-4">
+  <h1>Feedback zum Kapitel HTML</h1>
+  <p>Bitte bewerte das Kapitel, um die Inhalte zukünftig zu verbessern.</p>
+  <p>Wie verständlich waren die gegebenen Anleitungen und Hilfestellungen?</p>
+  <div class="flex flex-wrap gap-3">
+    <div class="flex align-items-center">
+      <p-radioButton name="1" value="1" [(ngModel)]="ratinga" inputId="a1"></p-radioButton>
+      <label for="a1" class="ml-2">sehr gut</label>
+    </div>
+    <div class="flex align-items-center">
+      <p-radioButton name="1" value="2" [(ngModel)]="ratinga" inputId="a2"></p-radioButton>
+      <label for="a2" class="ml-2">gut</label>
+    </div>
+    <div class="flex align-items-center">
+      <p-radioButton name="1" value="3" [(ngModel)]="ratinga" inputId="a3"></p-radioButton>
+      <label for="a3" class="ml-2">mittel</label>
+    </div>
+    <div class="flex align-items-center">
+      <p-radioButton name="1" value="4" [(ngModel)]="ratinga" inputId="a4"></p-radioButton>
+      <label for="a4" class="ml-2">schlecht</label>
+    </div>
+    <div class="flex align-items-center">
+      <p-radioButton name="1" value="5" [(ngModel)]="ratinga" inputId="a5"></p-radioButton>
+      <label for="a5" class="ml-2">sehr schlecht</label>
+    </div>
+  </div>
+
+  <p>Glauben Sie den Inhalten des Kapitels verstanden zu haben?</p>
+  <div class="flex flex-wrap gap-3">
+    <div class="flex align-items-center">
+      <p-radioButton name="2" value="1" [(ngModel)]="ratingb" inputId="b1"></p-radioButton>
+      <label for="b1" class="ml-2">sehr gut</label>
+    </div>
+    <div class="flex align-items-center">
+      <p-radioButton name="2" value="2" [(ngModel)]="ratingb" inputId="b2"></p-radioButton>
+      <label for="b2" class="ml-2">gut</label>
+    </div>
+    <div class="flex align-items-center">
+      <p-radioButton name="2" value="3" [(ngModel)]="ratingb" inputId="b3"></p-radioButton>
+      <label for="b3" class="ml-2">mittel</label>
+    </div>
+    <div class="flex align-items-center">
+      <p-radioButton name="2" value="4" [(ngModel)]="ratingb" inputId="b4"></p-radioButton>
+      <label for="b4" class="ml-2">schlecht</label>
+    </div>
+    <div class="flex align-items-center">
+      <p-radioButton name="2" value="5" [(ngModel)]="ratingb" inputId="b5"></p-radioButton>
+      <label for="b5" class="ml-2">sehr schlecht</label>
+    </div>
+  </div>
+
+
+  <p>Sonstiges:</p>
+  <textarea rows="5" cols="30" pInputTextarea></textarea>
+</div>

@@ -5,7 +5,8 @@ import {PathViewComponent} from "./path-view/path-view.component";
 import {SelectionViewComponent} from "./selection-view/selection-view.component";
 
 const routes: Routes = [
-  {path: '', component: SelectionViewComponent},
+  {path: '', component: DashboardComponent},
+  {path: 'uc', component: SelectionViewComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'learning-path', component: PathViewComponent},
   {path: 'scenario/:id', component: SelectionViewComponent},

@@ -6,14 +6,17 @@
   </div>
   <div class="col-9">
     <div class="border-1 border-gray-300 h-full relative">
+      <app-uc0 *ngIf="this.view == '0'"></app-uc0>
       <app-uc1 *ngIf="this.view == '1'"></app-uc1>
       <app-uc2 *ngIf="this.view == '2'"></app-uc2>
       <app-uc3 *ngIf="this.view == '3'"></app-uc3>
       <app-uc4 *ngIf="this.view == '4'"></app-uc4>
       <app-uc5 *ngIf="this.view == '5'"></app-uc5>
+      <app-uc6 *ngIf="this.view == '6'"></app-uc6>
+      <app-uc7 *ngIf="this.view == '7'"></app-uc7>
       <div class="border-top-1 border-gray-300 absolute bottom-0 w-full p-2 flex justify-content-between">
-        <p-button label="Zurück" icon="pi pi-arrow-left"></p-button>
-        <p-button label="Weiter" icon="pi pi-arrow-right" iconPos="right"></p-button>
+        <a href="{{this.back()}}"><p-button label="Zurück" icon="pi pi-arrow-left"></p-button></a>
+        <a href="{{this.forward()}}"><p-button (click)="this.forward()" label="Weiter" icon="pi pi-arrow-right" iconPos="right"></p-button></a>
       </div>
     </div>
   </div>

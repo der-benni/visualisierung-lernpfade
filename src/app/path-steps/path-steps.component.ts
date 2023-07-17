@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {MenuItem} from "primeng/api";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, NavigationExtras, Router} from "@angular/router";
 import { ChartModule } from 'primeng/chart';
 
 @Component({
@@ -11,7 +11,7 @@ import { ChartModule } from 'primeng/chart';
 export class PathStepsComponent {
   items: MenuItem[];
 
-  currentStep: string = '3-0-1'
+  currentStep: string = '3-0-0'
   colorDone: string = 'green'
   colorCurrent: string = 'orange'
   colorUndone: string = ''
@@ -19,14 +19,21 @@ export class PathStepsComponent {
   iconCurrent: string = 'pi pi-circle'
   iconUndone: string = 'pi pi-circle'
 
-  view: string = ''
+  view: string = '0'
+  step: string = '0'
+  path: string[] = ['3-0-0;0;0','3-0-1;0;1','3-0-1;0;2','3-0-1;6;0', '3-0-1;7;0', '3-0-1;4;0', '3-0-1;1;0',
+    '3-0-2;0;0','3-0-2;0;1','3-0-2;0;2','3-0-2;6;0', '3-0-2;7;0', '3-0-2;4;0', '3-0-2;1;0',
+    '3-0-3;0;0','3-0-3;0;1','3-0-3;0;2','3-0-3;6;0', '3-0-3;7;0', '3-0-3;4;0', '3-0-3;1;0',
+    '3-0-4;0;0','3-0-4;0;1','3-0-4;0;2','3-0-4;6;0', '3-0-4;7;0', '3-0-4;4;0', '3-0-4;1;0',
+    '3-1-0;0;0',
+  ]
 
 
   data: any;
 
   options: any;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private router: Router) {
     this.items = [
       {
         label: 'Willkommen',
@@ -44,6 +51,9 @@ export class PathStepsComponent {
             label: 'HTML',
             items: [
               {
+                label: 'Grundlagen',
+              },
+              {
                 label: 'Tags',
               },
               {
@@ -57,6 +67,9 @@ export class PathStepsComponent {
           {
             label: 'CSS',
             items: [
+              {
+                label: 'Grundlagen',
+              },
               {
                 label: 'Selektoren',
               },
@@ -136,6 +149,9 @@ export class PathStepsComponent {
     const queryView = this.route.snapshot.queryParamMap.get('v');
     if(queryView)
       this.view = queryView;
+    const query = this.route.snapshot.queryParamMap.get('s');
+    if(query)
+      this.step = query;
     this.setCurrentStep(this.items, 0)
   }
 
@@ -167,6 +183,22 @@ export class PathStepsComponent {
       item.iconStyle = {color: color};
       this.setAllChildItems(item.items,icon,color)
     })
+  }
+
+  forward(){
+    let index:number = this.path.indexOf(`${this.currentStep};${this.view};${this.step}`);
+    if(index == -1) return;
+    if(index != this.path.length-1) index = index +1;
+    const query:string[] = this.path[index].split(';');
+    return `learning-path?t=1&cs=${query[0]}&v=${query[1]}&s=${query[2]}`
+  }
+
+  back(){
+    let index:number = this.path.indexOf(`${this.currentStep};${this.view};${this.step}`);
+    if(index == -1) return;
+    if(!(index <= 0)) index = index -1;
+    const query:string[] = this.path[index].split(';');
+    return `learning-path?t=1&cs=${query[0]}&v=${query[1]}&s=${query[2]}`
   }
 
 }

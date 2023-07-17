@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./uc5.component.scss']
 })
 export class Uc5Component {
-
+  ratinga:any;
+  ratingb:any;
 }
