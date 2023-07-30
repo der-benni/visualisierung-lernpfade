@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-uc1',
@@ -10,7 +11,15 @@ export class Uc1Component {
 
   options: any;
 
+  step: string = '0'
+
+  constructor(private route: ActivatedRoute) {}
+
   ngOnInit() {
+    const query = this.route.snapshot.queryParamMap.get('s');
+    if(query)
+      this.step = query;
+
     const documentStyle = getComputedStyle(document.documentElement);
     const textColor = documentStyle.getPropertyValue('--text-color');
 

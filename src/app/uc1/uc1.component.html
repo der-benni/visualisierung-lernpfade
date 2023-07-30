@@ -4,13 +4,15 @@
   </div>
   <div class="flex flex-column align-items-center justify-content-center">
     <p>61% der Studierenden haben mit dem Nächsten Abschnitt weiter gelernt</p>
-    <p-button label="Nächster Abschnitt" icon="pi pi-arrow-right" iconPos="right"></p-button>
-    <p>20% der Studierenden haben mit diesen Abschnitt wiederholt</p>
-    <p-button styleClass="p-button-success" label="Wiederholen" icon="pi pi-arrow-right" iconPos="right"></p-button>
+    <a  *ngIf="this.step == '0'" href="learning-path?t=1&cs=3-0-0&v=0&s=0"><p-button label="Nächster Abschnitt" icon="pi pi-arrow-right" iconPos="right"></p-button></a>
+    <a  *ngIf="this.step == '1'" href="learning-path?t=1&cs=3-0-1&v=3&s=0"><p-button label="Nächster Abschnitt" icon="pi pi-arrow-right" iconPos="right"></p-button></a>
+    <p>20% der Studierenden haben diesen Abschnitt wiederholt</p>
+    <a  *ngIf="this.step == '0'" href="learning-path?t=1&cs=3-0-0&v=0&s=0"><p-button styleClass="p-button-success" label="Wiederholen" icon="pi pi-arrow-right" iconPos="right"></p-button></a>
+    <a  *ngIf="this.step == '1'" href="learning-path?t=1&cs=3-0-1&v=0&s=2"><p-button styleClass="p-button-success" label="Wiederholen" icon="pi pi-arrow-right" iconPos="right"></p-button></a>
     <p>10% der Studierenden haben mit dem Kapitel Backend-Technologien weiter gemacht</p>
-    <p-button styleClass="p-button-help" label="Backend-Technologien" icon="pi pi-arrow-right" iconPos="right"></p-button>
-    <p>9% der Studierenden haben mit dem Kapitel Grundlagen weiter gemacht</p>
-    <p-button styleClass="p-button-warning" label="Grundlagen" icon="pi pi-arrow-right" iconPos="right"></p-button>
+    <a href="learning-path?t=1&cs=3-0-2&v=3&s=0"><p-button styleClass="p-button-help" label="CSS-Grundlagen" icon="pi pi-arrow-right" iconPos="right"></p-button></a>
+    <p>9% der Studierenden haben mit dem Kapitel Struktur weiter gemacht</p>
+    <a href="learning-path?t=1&cs=3-0-2&v=3&s=0"><p-button styleClass="p-button-warning" label="HTML-Struktur" icon="pi pi-arrow-right" iconPos="right"></p-button></a>
   </div>
   <div class="flex align-items-center justify-content-center">
   </div>

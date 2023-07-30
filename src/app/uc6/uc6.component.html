@@ -1,9 +1,14 @@
 <div class="w-full h-full flex flex-column justify-content-start px-4">
-  <h1>Struktur</h1>
-  <p>Es stehen noch weitere Medien zur Verfügung, um zusätzlich tieferes Wissen zu erlangen.<br/>
-    Möchtest du mit dem nächsten Abschnitt weiter machen oder die zusätzlichen Medien sehen?</p>
-  <div class="flex flex-column align-items-center justify-content-center">
+  <h1 *ngIf="this.step == '0'">HTML-Grundlagen</h1>
+  <h1 *ngIf="this.step == '1'">HTML-Tags</h1>
+  <p>Es stehen noch weitere Medien zur Verfügung, um zusätzlich tieferes Wissen zu erlangen.</p>
+  <!--<div class="flex flex-column align-items-center justify-content-center">
     <p-button class="mt-2" styleClass="p-button-success" label="zusätzliche Medien" icon="pi pi-arrow-right" iconPos="right"></p-button>
     <p-button class="mt-4" label="Nächster Abschnitt" icon="pi pi-arrow-right" iconPos="right"></p-button>
-</div>
+  </div>-->
+  <ul>
+    <li class="mb-4">Kurzes Tutorial auf Youtube:<br><a href="https://youtu.be/ok-plXXHlWw" target="_blank">https://youtu.be/ok-plXXHlWw</a></li>
+    <li class="mb-4">1. Ausführliches Tutorial auf Youtube:<br><a href="https://youtu.be/qz0aGYrrlhU" target="_blank">https://youtu.be/qz0aGYrrlhU</a></li>
+    <li class="mb-4">2. Ausführliches Tutorial auf Youtube:<br><a href="https://youtu.be/UB1O30fR-EE" target="_blank">https://youtu.be/UB1O30fR-EE</a></li>
+  </ul>
 </div>

@@ -1,5 +1,6 @@
 <div class="w-full h-full flex flex-column justify-content-start px-4">
-  <h1>Quiz zum Abschnitt Attribute</h1>
+  <h1 *ngIf="this.step == '0'">HTML-Grundlagen Quiz</h1>
+  <h1 *ngIf="this.step == '1'">HTML-Tags Quiz</h1>
   <p>Um den Abschnitt abzuschließen, beantworte folgende Fragen:</p>
   <p>Beispielfrage</p>
   <div class="flex flex-wrap gap-3">

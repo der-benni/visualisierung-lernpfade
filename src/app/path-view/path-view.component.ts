@@ -8,7 +8,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class PathViewComponent {
   activeTabIndex: number = 0;
-  progress:number = 50;
+  progress:number = 43;
 
   constructor(private route: ActivatedRoute) {}
 

@@ -8,7 +8,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class Uc0Component {
 
-  step: string = ''
+  step: string = '0'
 
   constructor(private route: ActivatedRoute) {}
 
