@@ -1,5 +1,6 @@
 <div class="w-full h-full flex flex-column justify-content-start px-4">
-  <h1>Feedback zum Kapitel HTML</h1>
+  <h1 *ngIf="this.step == '0'">Feedback zum Kapitel HTML-Grundlagen</h1>
+  <h1 *ngIf="this.step == '1'">Feedback zum Kapitel HTML-Tags</h1>
   <p>Bitte bewerte das Kapitel, um die Inhalte zukünftig zu verbessern.</p>
   <p>Wie verständlich waren die gegebenen Anleitungen und Hilfestellungen?</p>
   <div class="flex flex-wrap gap-3">

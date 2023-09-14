@@ -15,8 +15,8 @@
       <app-uc6 *ngIf="this.view == '6'"></app-uc6>
       <app-uc7 *ngIf="this.view == '7'"></app-uc7>
       <div class="border-top-1 border-gray-300 absolute bottom-0 w-full p-2 flex justify-content-between">
-        <a href="{{this.back()}}"><p-button label="Zurück" icon="pi pi-arrow-left"></p-button></a>
-        <a href="{{this.forward()}}"><p-button (click)="this.forward()" label="Weiter" icon="pi pi-arrow-right" iconPos="right"></p-button></a>
+        <a href="{{this.back()}}"><p-button label="Zurück" icon="pi pi-arrow-left" [disabled]="this.currentStep=='3-0-0'&&this.view=='7'&&this.step=='0'"></p-button></a>
+        <a href="{{this.forward()}}"><p-button (click)="this.forward()" label="Weiter" icon="pi pi-arrow-right" iconPos="right" [disabled]="this.currentStep=='3-0-1'&&this.view=='3'&&this.step=='0'"></p-button></a>
       </div>
     </div>
   </div>

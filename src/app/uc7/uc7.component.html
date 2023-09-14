@@ -1,7 +1,9 @@
 <div class="w-full h-full flex flex-column justify-content-start px-4">
-  <h1 *ngIf="this.step == '0'">HTML-Grundlagen Quiz</h1>
-  <h1 *ngIf="this.step == '1'">HTML-Tags Quiz</h1>
-  <p>Um den Abschnitt abzuschließen, beantworte folgende Fragen:</p>
+  <h1 *ngIf="this.step == '0'">Wissenstest</h1>
+  <h1 *ngIf="this.step == '1'">HTML-Grundlagen Quiz</h1>
+  <h1 *ngIf="this.step == '2'">HTML-Tags Quiz</h1>
+  <p *ngIf="this.step == '0'">Was weißt du bereits über HTML?</p>
+  <p *ngIf="this.step != '0'">Um den Abschnitt abzuschließen, beantworte folgende Fragen:</p>
   <p>Beispielfrage</p>
   <div class="flex flex-wrap gap-3">
     <div class="flex align-items-center">
